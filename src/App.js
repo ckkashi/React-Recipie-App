@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import { useState } from 'react';
+
+
 
 function App() {
+  //search bar state
+  const [searchText, setSearchText] = useState('');
+  const setSearchValue = (e)=>{
+    setSearchText(e.target.value);
+  }
+
+  //search btn click
+  const searchBtnClick = ()=>{
+    document.querySelector('#result').innerHTML = searchText;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar searchText={searchText} setSearchText={setSearchValue} searchBtnClick={searchBtnClick}/>
+      <h1 id='result'></h1>
+    </>
   );
 }
 
