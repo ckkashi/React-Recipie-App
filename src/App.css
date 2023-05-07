@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+main.main-body-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 nav{
   width: 100vw;
   background-color: coral;
@@ -27,6 +33,40 @@ nav div.searchBox input#searchField,button#searchBtn{
   background-color: white;
 }
 
+main.main-section{
+  width: 90vw ;
+  /* height: 85vh; */
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.main-section section{
+  width: 40vw;
+  height: 83vh;
+  background-color: whitesmoke;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main.main-section section ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+main.main-section section ul li.recipies-listitem{
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 10px 0px;
+}
+
 @media only screen and (max-width:720px){
   nav{
     justify-content: center;
@@ -35,5 +75,13 @@ nav div.searchBox input#searchField,button#searchBtn{
   }
   nav div.searchBox{
     margin-top: 10px;
+  }
+  main.main-section{
+    width: 100vw;
+    flex-direction: column;
+  }
+  main.main-section section{
+    width: 90vw;
+    /* height: 90vh; */
   }
 }
